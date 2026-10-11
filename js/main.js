@@ -623,6 +623,72 @@ function initWelcomeScreen() {
   window.setTimeout(closeWelcome, 5000);
 }
 
+function initBackgroundNasheed() {
+  const bgAudio = document.getElementById('bg-nasheed');
+  if (!bgAudio) return;
+
+  bgAudio.volume = 0.45;
+
+  let started = false;
+  const startPlayback = () => {
+    if (started) return;
+    const playPromise = bgAudio.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          started = true;
+          cleanupListeners();
+        })
+        .catch(() => {
+          // Modern browsers require a user gesture before unmuted playback
+        });
+    }
+  };
+
+  const interactionEvents = ['click', 'touchstart', 'pointerdown', 'keydown', 'scroll'];
+  const handleInteraction = () => {
+    startPlayback();
+  };
+
+  function cleanupListeners() {
+    interactionEvents.forEach((evt) => {
+      window.removeEventListener(evt, handleInteraction);
+      document.removeEventListener(evt, handleInteraction);
+    });
+  }
+
+  // Attempt autoplay immediately upon site load
+  startPlayback();
+
+  // Fallback: start immediately upon any first user interaction anywhere on the page
+  interactionEvents.forEach((evt) => {
+    window.addEventListener(evt, handleInteraction, { once: true, passive: true });
+    document.addEventListener(evt, handleInteraction, { once: true, passive: true });
+  });
+
+  const enterButton = document.getElementById('welcome-enter');
+  if (enterButton) {
+    enterButton.addEventListener('click', startPlayback);
+  }
+
+  // When user plays Quran recitation from the listening player, pause background music so sounds don't conflict
+  if (elements.audio) {
+    elements.audio.addEventListener('play', () => {
+      bgAudio.pause();
+    });
+    elements.audio.addEventListener('pause', () => {
+      if (!elements.audio.ended && started) {
+        bgAudio.play().catch(() => {});
+      }
+    });
+    elements.audio.addEventListener('ended', () => {
+      if (started) {
+        bgAudio.play().catch(() => {});
+      }
+    });
+  }
+}
+
 function init() {
   setCurrentYear();
   setInitialThemeStates();
@@ -637,8 +703,10 @@ function init() {
   bindRenderingControls();
   initializeJourney();
   initAudio();
+  initBackgroundNasheed();
   initAccessibilityMotion();
   initWelcomeScreen();
 }
 
 init();
+
