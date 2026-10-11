@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NOOR-E-NARGIZ — A peaceful Islamic website dedicated to remembrance, Quran reflection, and the journey toward becoming a Hafiza."
+    />
+    <title>NOOR-E-NARGIZ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css?v=2" />
+  </head>
+  <body>
+    <section
+      class="welcome-screen"
+      id="welcome-screen"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="welcome-title"
+      aria-describedby="welcome-verse"
+    >
+      <div class="welcome-screen__content">
+        <span class="welcome-screen__moon" aria-hidden="true">☾</span>
+        <h1
+          class="welcome-screen__arabic welcome-screen__title"
+          id="welcome-title"
+          lang="ar"
+          dir="rtl"
+          aria-label="السلام عليكِ ورحمة الله وبركاته، نرگس"
+        >
+          <span class="welcome-greeting">السَّلَامُ عَلَيْكِ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</span>
+          <span class="welcome-name">نَرْگِس</span>
+        </h1>
+        <p class="welcome-screen__message">Welcome to your peaceful Quran sanctuary.</p>
+        <blockquote id="welcome-verse">
+          <p lang="ar" dir="rtl">فَإِنَّ مَعَ الْعُسْرِ يُسْرًا</p>
+          <cite>“For indeed, with hardship comes ease.”<br />Surah Ash-Sharh 94:5</cite>
+        </blockquote>
+        <button class="welcome-screen__enter" id="welcome-enter" type="button">
+          Enter Noor
+        </button>
+        <span class="welcome-screen__caption">A peaceful journey with the Holy Quran</span>
+      </div>
+    </section>
+
+    <div class="page-shell" inert>
+      <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+          <a class="brand" href="#home" aria-label="Go to homepage">
+            <span class="brand-icon" aria-hidden="true">☾</span>
+            <span>NOOR-E-NARGIZ</span>
+          </a>
+
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="nav-menu" id="nav-menu">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#quran" class="nav-link">The Holy Quran</a>
+            <a href="#daily-ayah" class="nav-link">Daily Ayah</a>
+            <a href="#audio" class="nav-link">Quran Listening</a>
+            <a href="#nasheed" class="nav-link">Nasheed</a>
+            <a href="#hafiza" class="nav-link">My Hafiza Journey</a>
+            <a href="#reminders" class="nav-link">Islamic Reminders</a>
+            <a href="#about" class="nav-link">About Noor</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" id="home">
+          <div class="hero-backdrop" aria-hidden="true">
+            <div class="moon"></div>
+            <div class="stars"></div>
+            <div class="mosque silhouette"></div>
+            <div class="geometric pattern-one"></div>
+            <div class="geometric pattern-two"></div>
+          </div>
+
+          <div class="container hero-inner">
+            <div class="hero-copy reveal">
+              <p class="eyebrow">A Peaceful Journey with the Holy Quran</p>
+              <h1>Find a moment of Noor</h1>
+              <p class="lead">A little space for remembrance, reflection, and growing closer to Allah.</p>
+              <p class="blessing">
+                May Allah fill your heart with the light of the Quran, strengthen your Iman,
+                and make your journey toward becoming a Hafiza beautiful and blessed.
+              </p>
+
+              <div class="cta-group">
+                <a class="btn btn-primary" href="#daily-ayah">Begin Your Quran Journey</a>
+                <a class="btn btn-secondary" href="#reminders">Explore Daily Reminders</a>
+              </div>
+            </div>
+
+            <div class="hero-panel reveal">
+              <div class="mini-card">
+                <span class="mini-label">Today’s light</span>
+                <h3>“A little space for remembrance, reflection, and growing closer to Allah.”</h3>
+              </div>
+              <div class="hero-stats">
+                <div>
+                  <strong>Quran</strong>
+                  <span>Reflection</span>
+                </div>
+                <div>
+                  <strong>Peace</strong>
+                  <span>Sabr</span>
+                </div>
+                <div>
+                  <strong>Purpose</strong>
+                  <span>Hafiza</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="daily-ayah">
+          <div class="container">
+            <div class="section-head reveal">
+              <p class="eyebrow">Daily Ayah</p>
+              <h2>A moment of reflection</h2>
+            </div>
+
+            <article class="ayah-card reveal" id="daily-ayah-card" aria-live="polite">
+              <div class="ayah-header">
+                <span class="tag">Daily reflection</span>
+                <div class="ayah-actions">
+                  <button class="icon-btn" data-action="copy-ayah" type="button" aria-label="Copy ayah">
+                    Copy
+                  </button>
+                  <button class="icon-btn" data-action="bookmark-ayah" type="button" aria-label="Bookmark ayah">
+                    Bookmark
+                  </button>
+                  <button class="icon-btn" data-action="share-ayah" type="button" aria-label="Share ayah">
+                    Share
+                  </button>
+                  <button class="icon-btn" data-action="play-ayah" type="button" aria-label="Play ayah audio" disabled>
+                    Play
+                  </button>
+                </div>
+              </div>
+
+              <p class="ayah-arabic" id="ayah-arabic"></p>
+              <div class="ayah-meta">
+                <span id="ayah-reference"></span>
+                <span id="ayah-translation-source"></span>
+              </div>
+
+              <p class="ayah-translation" id="ayah-translation"></p>
+              <div class="reflection-box">
+                <h3>Reflection</h3>
+                <p id="ayah-reflection"></p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section-soft" id="quran">
+          <div class="container">
+            <div class="section-head reveal">
+              <p class="eyebrow">The Holy Quran</p>
+              <h2>Starter Quran reader</h2>
+            </div>
+
+            <div class="quran-layout reveal">
+              <aside class="quran-sidebar panel-card">
+                <label class="search-label" for="quran-search">
+                  Search surah
+                  <input id="quran-search" type="search" placeholder="Search surah name" />
+                </label>
+                <div id="surah-list" class="surah-list" aria-live="polite"></div>
+              </aside>
+
+              <div class="quran-reader panel-card">
+                <div class="reader-toolbar">
+                  <div class="theme-switcher" aria-label="Reading theme switcher">
+                    <button class="mode-btn active" data-theme="light" type="button">Light</button>
+                    <button class="mode-btn" data-theme="dark" type="button">Dark</button>
+                  </div>
+
+                  <div class="font-controls" aria-label="Reading text size controls">
+                    <button id="font-decrease" type="button" aria-label="Decrease Arabic font size">A−</button>
+                    <button id="font-increase" type="button" aria-label="Increase Arabic font size">A+</button>
+                  </div>
+                </div>
+
+                <div id="quran-content" class="quran-content"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="audio">
+          <div class="container">
+            <div class="section-head reveal">
+              <p class="eyebrow">Quran Listening</p>
+              <h2>Peaceful recitation</h2>
+            </div>
+
+            <div class="audio-player reveal" aria-live="polite">
+              <div class="audio-cover">
+                <div class="cover-art">
+                  <span>☾</span>
+                </div>
+                <div class="cover-copy">
+                  <p class="mini-tag">Quran audio</p>
+                  <h3 id="audio-title">Choose a recitation</h3>
+                  <p id="audio-reciter">Audio source must be configured.</p>
+                </div>
+              </div>
+
+              <div class="audio-controls">
+                <audio id="quran-audio" preload="metadata"></audio>
+
+                <div class="transport-row">
+                  <button class="transport-btn" id="prev-track" type="button" aria-label="Previous track">⏮</button>
+                  <button class="transport-btn primary" id="play-pause" type="button" aria-label="Play or pause audio">▶</button>
+                  <button class="transport-btn" id="next-track" type="button" aria-label="Next track">⏭</button>
+                </div>
+
+                <div class="progress-stack">
+                  <input id="audio-progress" type="range" min="0" max="100" value="0" aria-label="Audio progress" />
+                  <div class="time-row">
+                    <span id="current-time">00:00</span>
+                    <span id="total-time">00:00</span>
+                  </div>
+                </div>
+
+                <div class="volume-row">
+                  <label for="volume-control">Volume</label>
+                  <input id="volume-control" type="range" min="0" max="1" step="0.05" value="0.8" aria-label="Volume" />
+                </div>
+              </div>
+
+              <aside class="playlist-panel">
+                <h3>Playlist</h3>
+                <ul id="audio-playlist" class="audio-playlist"></ul>
+                <p class="audio-message">
+                  Audio files are not bundled in this project. Add valid local or remote sources to the track list in the JavaScript configuration to enable playback.
+                </p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-soft" id="nasheed">
+          <div class="container">
+            <div class="section-head reveal">
+              <p class="eyebrow">Nasheed</p>
+              <h2>Gentle reminders in song</h2>
+            </div>
+
+            <div id="nasheed-grid" class="nasheed-grid reveal"></div>
+          </div>
+        </section>
+
+        <section class="section" id="hafiza">
+          <div class="container">
+            <div class="section-head reveal">
+              <p class="eyebrow">My Hafiza Journey</p>
+              <h2>Steady steps toward the Quran</h2>
+            </div>
+
+            <div class="journey-layout reveal">
+              <div class="journey-content panel-card">
+                <p class="motivation-line">“Slow progress is still progress. Keep returning to the Quran with sincerity.”</p>
+                <ul id="journey-list" class="journey-list" aria-live="polite"></ul>
+              </div>
+
+              <div class="journey-summary panel-card">
+                <div class="progress-ring">
+                  <div class="progress-percent" id="progress-percent">0%</div>
+                </div>
+                <div class="progress-info">
+                  <strong id="progress-count">0 / 7 completed</strong>
+                  <div class="progress-bar">
+                    <span id="progress-fill"></span>
+                  </div>
+                </div>
+                <button class="btn btn-secondary reset-btn" type="button" id="reset-progress">
+                  Reset Progress
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-soft" id="reminders">
+          <div class="container">
+            <div class="section-head reveal">
+              <p class="eyebrow">Islamic Reminders</p>
+              <h2>Daily anchors for the heart</h2>
+            </div>
+
+            <div id="reminder-grid" class="reminder-grid reveal"></div>
+          </div>
+        </section>
+
+        <section class="section patience-section" id="patience">
+          <div class="container">
+            <div class="patience-box reveal">
+              <p class="eyebrow">Peace and Patience</p>
+              <h2>Let Your Heart Choose Sabr</h2>
+              <p>
+                Sometimes a quiet moment, a sincere dua, or a gentle word can change the way
+                we see a difficult day. May Allah guide us toward patience, understanding,
+                forgiveness, and beautiful character.
+              </p>
+
+              <div class="patience-cards">
+                <article class="patience-card">
+                  <span>Pause Before You Speak.</span>
+                </article>
+                <article class="patience-card">
+                  <span>Choose Gentle Words.</span>
+                </article>
+                <article class="patience-card">
+                  <span>Make Dua Before You Worry.</span>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="dua">
+          <div class="container">
+            <div class="section-head reveal">
+              <p class="eyebrow">Dua Collection</p>
+              <h2>Words that bring the heart closer to Allah</h2>
+            </div>
+
+            <div id="dua-grid" class="dua-grid reveal"></div>
+          </div>
+        </section>
+
+        <section class="section section-soft" id="about">
+          <div class="container">
+            <div class="about-box reveal">
+              <div class="about-copy">
+                <p class="eyebrow">About Noor</p>
+                <h2>NOOR-E-NARGIZ</h2>
+                <p>
+                  NOOR-E-NARGIZ is a small digital sanctuary inspired by the beauty of the Quran,
+                  the peace of remembrance, and the journey of learning Islam. It is designed to
+                  encourage reflection, good character, and a sincere connection with Allah.
+                </p>
+                <p>
+                  May every visit bring a moment of peace, a reminder of goodness, and renewed
+                  motivation to learn the Quran.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div class="footer-brand">
+            <h3>NOOR-E-NARGIZ</h3>
+            <p>Made with care, inspired by the light of the Quran.</p>
+          </div>
+
+          <div class="footer-links">
+            <a href="#quran">Quran</a>
+            <a href="#daily-ayah">Daily Ayah</a>
+            <a href="#dua">Dua Collection</a>
+          </div>
+
+          <div class="footer-greeting">
+            <p>السَّلَامُ عَلَيْكِ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</p>
+            <span id="copyright-year"></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
