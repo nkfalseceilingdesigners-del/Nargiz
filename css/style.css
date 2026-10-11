@@ -1472,6 +1472,37 @@ body.reduced-motion .welcome-screen__arabic .welcome-name {
 }
 
 @media (max-width: 760px) {
+  .welcome-screen,
+  .hero,
+  .patience-box,
+  .about-box,
+  .site-footer,
+  .nasheed-card {
+    background-size: cover, cover !important;
+    background-position: center, center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .welcome-screen,
+  .hero,
+  .patience-box,
+  .about-box,
+  .site-footer {
+    background-color: var(--primary-deep);
+  }
+
+  .hero-backdrop {
+    background: linear-gradient(180deg, rgba(15, 46, 40, 0.12), rgba(15, 46, 40, 0.3));
+  }
+
+  .hero-backdrop::before,
+  .hero-backdrop .moon,
+  .hero-backdrop .stars,
+  .hero-backdrop .mosque,
+  .hero-backdrop .geometric {
+    display: none;
+  }
+
   .nav-toggle {
     display: flex;
   }
